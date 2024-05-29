@@ -1,23 +1,15 @@
+
 #include "libft.h"
 
-/*
-
-*/
-
-void *ft_memset(void *ptr, int x, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-    unsigned char   *s;
-    size_t  i;
+	char	*p;
 
-    i = 0;
-    s = ptr;
-    while( i < n)
-    {
-        //mi str en la posicion i igual a x
-        s[i] = (unsigned char)x;
-        //y paso a la siguiente referencia de memoria
-        i++;
-    }
-    // devuelve el str modificado
-    return (ptr);
+	p = (char *)b;
+	while (len > 0)
+	{
+		p[len - 1] = c;
+		len--;
+	}
+	return (b);
 }
