@@ -1,37 +1,27 @@
 
 #include "libft.h"
 
-int ft_atoi(const char *str) {
-    int result = 0;
-    int sign = 1;
-    int i = 0;
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	neg;
+	int	res;
 
-    // Ignorar espacios en blanco iniciales
-    while (str[i] == ' ') {
-        i++;
-    }
-
-    // Manejar signo
-    if (str[i] == '-') {
-        sign = -1;
-        i++;
-    } else if (str[i] == '+') {
-        i++;
-    }
-
-    // Convertir caracteres numéricos a números enteros
-    while (str[i] >= '0' && str[i] <= '9') {
-        //
-        result = result * 10 + (str[i] - '0');
-        i++;
-    }
-
-    return sign * result;
-}
-
-int main() {
-    char str[] = "  -1512a45b";
-    int num = ft_atoi(str);
-    printf("El número es: %d\n", num);  // Output: El número es: 12345
-    return 0;
+	i = 0;
+	neg = 1;
+	res = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			neg *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = (str[i] - '0') + (res * 10);
+		i++;
+	}
+	return (res * neg);
 }

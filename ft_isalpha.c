@@ -3,9 +3,9 @@
 
 /*test any char for alphabetic char*/
 
-int is_alpha(int c)
+int ft_isalpha(int i)
 {
-    if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+    if ((i >= 'A' && i <= 'Z') || (i >= 'a' && i <= 'z'))
     {
         return (1);
     }
